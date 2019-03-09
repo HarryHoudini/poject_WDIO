@@ -23,7 +23,7 @@ exports.config = {
     //
     sync: true,
     specs: [
-        './test/pinup/landing/register-email.ts'
+        './test/no_po.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -81,7 +81,8 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'http://the-internet.herokuapp.com',
+    // baseUrl: 'http://the-internet.herokuapp.com',
+    baseUrl: 'http://demo.litecart.net',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
