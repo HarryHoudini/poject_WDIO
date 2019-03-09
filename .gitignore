@@ -1,0 +1,5 @@
+node_modules
+mochaawesome/
+allure-results/
+allure-report/
+shots/
