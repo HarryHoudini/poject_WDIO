@@ -6,4 +6,4 @@ export class ProductDetailsPO extends BasePO {
         browser.pause(1500); //bad practics TO DO rewrite to explicit wait please
     }
 }
-export const Productdetails = new ProductDetailsPO ();
+export const ProductDetails = new ProductDetailsPO ();
