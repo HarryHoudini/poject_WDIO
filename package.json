@@ -14,7 +14,7 @@
     "report": "./node_modules/.bin/rimraf allure-report && allure generate ./allure-results && allure open",
     "repl-wdio": "./node_modules/.bin/wdio repl chrome"
   },
-  "author": "Jeremy Polley",
+  "author": "Jon Jonsen",
   "license": "ISC",
   "devDependencies": {
     "@types/chai": "^4.1.7",

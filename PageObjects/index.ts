@@ -1,3 +1,3 @@
-export { ProductDetails } from '../PageObjects/productDetails'
-export { Checkout } from '../PageObjects/checkout'
-export { Confirmation } from '../PageObjects/confirmation'
+export { ProductDetails } from './productDetails'
+export { Checkout } from './checkout'
+export { Confirmation } from './confirmation'
