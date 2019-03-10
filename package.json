@@ -1,9 +1,9 @@
 {
   "name": "webdriverio_v5_typescript",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
-  "description": "Boilerplate project using version 5 WebdriverIO & TypeScript.",
-  "repository": "https://github.com/jpolley/WebdriverIO_v5_TypeScript",
+  "description": "Demo description project",
+  "repository": "",
   "scripts": {
     "test": "./node_modules/.bin/wdio wdio.conf.js",
     "lint": "tslint --fix 'test/**/*.ts' && tslint --fix 'src/**/*.ts'",
@@ -11,7 +11,8 @@
     "__posttest": "allure generate ./allure-results && allure open",
     "allure": "allure open",
     "clean": "./node_modules/.bin/rimraf allure-report allure-results",
-    "report": "./node_modules/.bin/rimraf allure-report && allure generate ./allure-results && allure open"
+    "report": "./node_modules/.bin/rimraf allure-report && allure generate ./allure-results && allure open",
+    "repl-wdio": "./node_modules/.bin/wdio repl chrome"
   },
   "author": "Jeremy Polley",
   "license": "ISC",
