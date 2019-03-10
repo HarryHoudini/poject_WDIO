@@ -28,10 +28,10 @@ describe("Guest", function() {
     $('[name="lastname"]').setValue("lastname");
     $('[name="city"]').setValue("city");
     $('[name="postcode"]').setValue(faker.address.zipCode());
-    $('[name="address1"]').setValue(faker.address.streetAddress);
-    $('[name="address2"]').setValue(faker.address.streetAddress);
-    $('[name="email"]').setValue(faker.internet.email);
-    $('[name="phone"]').setValue(faker.phone);
+    $('input[name="address1"]').setValue(faker.address.streetAddress());
+    $('input[name="address2"]').setValue(faker.address.streetAddress());
+    $('[name="email"]').setValue(faker.internet.email());
+    $('[name="phone"]').setValue(faker.phone.phoneNumber());
     $('[name="save_customer_details"][disabled="disabled"]').waitForExist(
       1500,
       true,
