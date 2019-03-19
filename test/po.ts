@@ -55,5 +55,15 @@ describe("Guest", function() {
     expect(conformationText).to.match(
       /Your order #[1-9]{1,3} is successfully completed!/
     );
+   
   });
 });
+
+describe('description', function () {
+  let dataCollection = [11, 22, 333, 44, 53]
+  dataCollection.map(data => {
+      it(`ASASA TEST for ${data}`, async () => {
+          console.log(`TEST number ${data} execyted!`)
+      })
+  })
+})

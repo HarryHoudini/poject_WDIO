@@ -12,6 +12,7 @@
     "allure": "allure open",
     "clean": "./node_modules/.bin/rimraf allure-report allure-results",
     "report": "./node_modules/.bin/rimraf allure-report && allure generate ./allure-results && allure open",
+    "webdriver": "webdriver-manager start",
     "repl-wdio": "./node_modules/.bin/wdio repl chrome"
   },
   "author": "Jon Jonsen",

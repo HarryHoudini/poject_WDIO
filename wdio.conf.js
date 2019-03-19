@@ -22,8 +22,11 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     sync: true,
+    // specs: [
+    //     './test/no_po.ts'
+    // ],
     specs: [
-        './test/no_po.ts'
+        './test/simple2.ts'
     ],
     // Patterns to exclude.
     exclude: [
@@ -140,7 +143,7 @@ exports.config = {
         'tsconfig-paths/register'
       ],
         ui: 'bdd', 
-        timeout: process.env.DEBUG == true ? 12000000 : 60000
+        timeout: process.env.DEBUG == true ? 120000 : 60000
         
     },  
   onPrepare: () => {
@@ -185,7 +188,7 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
     before: function (capabilities, specs) {
-      require('ts-node').register({ files: true });
+      require('ts-node').register(true);
     },
     /**
      * Runs before a WebdriverIO command gets executed.
