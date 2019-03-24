@@ -10,6 +10,7 @@ export class ProductDetailsPO extends BasePO {
         .slice(1)
     );
     $("button.btn-success").click();
+    browser.pause(4000) //fix this with waitUntil
     const quantityItmAftAddToCard = Number($("span.quantity").getText());
     const quantitySumAftAddToCard = Number(
       $("span.formatted_value")

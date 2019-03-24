@@ -4,12 +4,12 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
+              {
             "type": "node",
             "request": "launch",
             "protocol": "inspector",      
             "port": 5859,
-            "name": "WDIO-local",
+            "name": "local",
             "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio",
             "windows": {
               "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/wdio.cmd"
@@ -29,7 +29,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "WDIO-remote",
+            "name": "remote",
             "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/wdio",
             "args": [
                 "./wdio.conf.js",
