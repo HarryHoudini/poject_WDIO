@@ -26,7 +26,7 @@ exports.config = {
     //     './test/no_po.ts'
     // ],
     specs: [
-        './test/simple2.ts'
+        './test/po.ts'
     ],
     // Patterns to exclude.
     exclude: [

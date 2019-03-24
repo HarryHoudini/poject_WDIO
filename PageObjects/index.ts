@@ -1,3 +1,3 @@
 export { ProductDetails } from './productDetails'
-export { Checkout } from './checkout'
+export { CheckoutPO } from './checkout'
 export { Confirmation } from './confirmation'

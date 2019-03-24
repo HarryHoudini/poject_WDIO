@@ -1,9 +1,38 @@
 import { BasePO } from "./base";
+import { expect } from "chai";
 
 export class ProductDetailsPO extends BasePO {
-    addToCard(): any {
-        $("button.btn-success").click();
-        browser.pause(1500); //bad practics TO DO rewrite to explicit wait please
-    }
+  addToCardOneItem(): any {
+    const quantityItmBeforeAddToCard = Number($("span.quantity").getText());
+    const quantitySumBeforeAddToCard = Number(
+      $("span.formatted_value")
+        .getText()
+        .slice(1)
+    );
+    $("button.btn-success").click();
+    const quantityItmAftAddToCard = Number($("span.quantity").getText());
+    const quantitySumAftAddToCard = Number(
+      $("span.formatted_value")
+        .getText()
+        .slice(1)
+    );
+    browser.waitUntil(
+      function() {
+        return Number($("span.quantity").getText()) == Number($("span.quantity").getText()) + 1;
+      },
+      5000,
+      "Wrong quantity is not exchanged"
+    );
+    browser.waitUntil(
+      function() {
+        return (
+          quantitySumAftAddToCard ==
+          quantitySumBeforeAddToCard + quantitySumAftAddToCard
+        );
+      },
+      5000,
+      "Wrong sum is not exchanged"
+    );
+  }
 }
-export const ProductDetails = new ProductDetailsPO ();
+export const ProductDetails = new ProductDetailsPO();
