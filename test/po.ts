@@ -37,8 +37,7 @@ describe("Guest", function() {
     const conformationText = $("#box-order-success>.title").getText();
     expect(conformationText).to.match(
       /Your order #[1-9]{1,3} is successfully completed!/
-    );
-   
+    );   
   });
 });
 
