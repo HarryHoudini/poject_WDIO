@@ -1,4 +1,4 @@
-import { Input } from "./input";
+import { Input } from "../index";
 
 export class CustomerDetails {
   protected containerLocator: string;
