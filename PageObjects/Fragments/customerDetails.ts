@@ -1,4 +1,5 @@
 import { Input } from "../index";
+import { Dropdown } from "../index";
 
 export class CustomerDetails {
   protected containerLocator: string;
@@ -28,17 +29,22 @@ export class CustomerDetails {
   });
   protected company: Input = new Input(() => {
     return this.container.$('input[name="company"]');
+  }); 
+  protected country: Dropdown = new Dropdown(() => {
+    return this.container.$('select[name="country_code"]');
   });
-//   protected country: Dropdown = new Dropdown(() => {
-//     return this.container.$('input[name="country_code"]');
-//   });
+  protected zone: Dropdown = new Dropdown(() => {
+    return this.container.$('select[name="zone_code"]');
+  });
  
 
   constructor(containerLocator: string) {
     this.containerLocator = containerLocator;
   }
   enterCoustumerDetails(CustomerDetails: ICustumerDetails) {
-
+    $('.loader-wrapper').waitForDisplayed(undefined, true) // wait for NOT displayed
+    this.firstName.type(CustomerDetails.first)
+    this.lastName.type(CustomerDetails.lastName)
   }
  
 }
