@@ -29,27 +29,54 @@ export class CustomerDetails {
   });
   protected company: Input = new Input(() => {
     return this.container.$('input[name="company"]');
-  }); 
+  });
   protected country: Dropdown = new Dropdown(() => {
     return this.container.$('select[name="country_code"]');
   });
   protected zone: Dropdown = new Dropdown(() => {
     return this.container.$('select[name="zone_code"]');
   });
- 
 
   constructor(containerLocator: string) {
     this.containerLocator = containerLocator;
   }
   enterCoustumerDetails(CustomerDetails: ICustumerDetails) {
-    $('.loader-wrapper').waitForDisplayed(undefined, true) // wait for NOT displayed
-    this.firstName.type(CustomerDetails.first)
-    this.lastName.type(CustomerDetails.lastName)
+    $(".loader-wrapper").waitForDisplayed(undefined, true); // wait for NOT displayed
+    this.firstName.type(CustomerDetails.first);
+    this.lastName.type(CustomerDetails.lastName);
+    this.phone.type(CustomerDetails.phone);
+    this.postCode.type(CustomerDetails.postCode);
+    this.adress1.type(CustomerDetails.adress1);
+    this.adress2.type(CustomerDetails.adress2);
+
+    //Below optional fields
+    if (CustomerDetails.taxID) {
+      return this.taxID.type(CustomerDetails.taxID);
+    }
+    if (CustomerDetails.company) {
+      return this.company.type(CustomerDetails.company);
+    }
+    if (CustomerDetails.country) {
+      return this.country.selectByAttribute(CustomerDetails.country);
+    }
+    if (CustomerDetails.zone) {
+      return this.country.selectByAttribute(CustomerDetails.zone);
+    }
   }
- 
 }
 
 interface ICustumerDetails {
-    first: string; 
-    lastName: string
+  first: string;
+  lastName: string;
+  phone: string;
+  postCode: string;
+  adress1: string;
+  adress2;
+  string;
+  city: string;
+  email: string;
+  company?: string;
+  country?: string;
+  zone?: string;
+  taxID?: string;
 }
