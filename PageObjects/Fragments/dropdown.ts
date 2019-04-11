@@ -1,11 +1,11 @@
-import { BaseFragment } from "../index";
+import { BaseFragment } from "./baseFragment";
 export class Dropdown extends BaseFragment {
-  selectByAttribute(value: string) {
-    this.container.waitForDisplayed(5000);
+  selectByValueAttribute(value: string) {
+    this.container.waitForDisplayed();
     console.log(
       "Selecting dropdown option",
       this.container["selector"],
-      " by value ",
+      "by value",
       value
     );
     this.container.selectByAttribute("value", value);

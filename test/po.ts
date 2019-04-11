@@ -6,6 +6,8 @@ describe("Guest", function() {
   it("should be able to buy item", function() {
     ProductDetails.open('/rubber-ducks-c-1/red-duck-p-3')
     ProductDetails.addToCardOneItem()
+    
+
     $("#cart").click();
     // $('[name="company"]').setValue("CompanyName");
     // $('input[name="address2"]').setValue(faker.address.streetAddress());

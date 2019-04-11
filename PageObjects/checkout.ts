@@ -1,23 +1,39 @@
-import { BasePO } from "./base";
 import * as faker from "faker";
+import { CustomerDetails } from "../PageObjects";
+import { BasePO } from "./base";
 
-export class CheckoutPO {
+export class CheckoutPO extends BasePO {
+  public customerDetails: CustomerDetails;
+
+  constructor() {
+    super();
+    this.customerDetails = new CustomerDetails(
+      "#box-checkout-costomer .billing-adress"
+    );
+  }
   goCheckOut(): any {
     $("#cart").click();
   }
-
-  enterCustomerDetails({
-    firstname = "ff",
-    lastname = "ff",
-    city = "cityTown",
-    postcode = "345624"
-  }): any {
-    $('input[name="firstname"]').setValue(firstname);
-    $('input[name="lastname"]').setValue(lastname);
-    $('input[name="city"]').setValue(city);
-    $('input[name="postcode"]').setValue(postcode);
-    $('input[name="address1"]').setValue(faker.address.streetAddress());
-    $('[name="email"]').setValue(faker.internet.email());
-    $('[name="phone"]').setValue(faker.phone.phoneNumberFormat());
+  saveChange(): void {
+    const saveCustomerBtn = $('button[name="save_customer_details"]');
+    browser.waitUntil(
+      function() {
+        return saveCustomerBtn.getAttribute("disabled") === null;
+      },
+      undefined,
+      "Save changes button expected to become enabled to click"
+    );
+    saveCustomerBtn.click();
+  }
+  confirmOrder(): any {
+    const confirmBtn = $('button[name="confirm_order"]');
+    browser.waitUntil(
+      function() {
+        return confirmBtn.getAttribute("disabled") == null;
+      },
+      undefined,
+      "Confirm order button expect to become enabled to click"
+    );
+    confirmBtn.click()
   }
 }

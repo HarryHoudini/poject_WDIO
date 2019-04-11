@@ -3,6 +3,7 @@ import { Dropdown } from "../index";
 
 export class CustomerDetails {
   protected containerLocator: string;
+
   protected get container() {
     return $(this.containerLocator);
   }
@@ -57,10 +58,10 @@ export class CustomerDetails {
       return this.company.type(CustomerDetails.company);
     }
     if (CustomerDetails.country) {
-      return this.country.selectByAttribute(CustomerDetails.country);
+      return this.country.selectByValueAttribute(CustomerDetails.country);
     }
     if (CustomerDetails.zone) {
-      return this.country.selectByAttribute(CustomerDetails.zone);
+      return this.country.selectByValueAttribute(CustomerDetails.zone);
     }
   }
 }
@@ -71,8 +72,7 @@ interface ICustumerDetails {
   phone: string;
   postCode: string;
   adress1: string;
-  adress2;
-  string;
+  adress2: string;
   city: string;
   email: string;
   company?: string;

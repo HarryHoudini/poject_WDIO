@@ -1,6 +1,7 @@
 import { BaseFragment } from "./baseFragment";
 
 export class Input extends BaseFragment {
+  
   type(value: string) {
     this.container.waitForDisplayed(5000);
     this.container.click();
@@ -9,4 +10,5 @@ export class Input extends BaseFragment {
     console.log("Type into ", this.container["selector"], "=>", value);
     this.container.setValue(value);
   }
+
 }
