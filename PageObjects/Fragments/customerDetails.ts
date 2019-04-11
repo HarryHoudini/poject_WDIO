@@ -1,5 +1,5 @@
-import { Input } from "../index";
-import { Dropdown } from "../index";
+import { Input } from "./input";
+import { Dropdown } from "./dropdown";
 
 export class CustomerDetails {
   protected containerLocator: string;
@@ -41,6 +41,7 @@ export class CustomerDetails {
   constructor(containerLocator: string) {
     this.containerLocator = containerLocator;
   }
+  
   enterCoustumerDetails(CustomerDetails: ICustumerDetails) {
     $(".loader-wrapper").waitForDisplayed(undefined, true); // wait for NOT displayed
     this.firstName.type(CustomerDetails.first);
@@ -66,7 +67,7 @@ export class CustomerDetails {
   }
 }
 
-interface ICustumerDetails {
+export interface ICustumerDetails {
   first: string;
   lastName: string;
   phone: string;

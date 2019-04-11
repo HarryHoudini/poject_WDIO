@@ -1,12 +1,29 @@
 import { expect } from "chai";
 import * as faker from "faker";
-import { ProductDetails, CheckoutPO, Confirmation} from "../PageObjects"
+import {
+  ProductDetails,
+  Checkout ,
+  Confirmation
+} from "../PageObjects";
 
 describe("Guest", function() {
   it("should be able to buy item", function() {
-    ProductDetails.open('/rubber-ducks-c-1/red-duck-p-3')
-    ProductDetails.addToCardOneItem()
-    
+    ProductDetails.open("/rubber-ducks-c-1/red-duck-p-3");
+    ProductDetails.addToCardOneItem();
+
+    Checkout.goCheckOut();
+    Checkout.customerDetails.enterCoustumerDetails({
+      first: "First Name",
+      lastName: "Last name",
+      phone: faker.phone.phoneNumberFormat(),
+      postCode: faker.address.zipCode(),
+      adress1: "Adress 1",
+      adress2: "Adress 2",
+      city: "CityName",
+      email: faker.internet.email(),
+      country: "US",
+     
+    });
 
     $("#cart").click();
     // $('[name="company"]').setValue("CompanyName");
@@ -39,8 +56,6 @@ describe("Guest", function() {
     const conformationText = $("#box-order-success>.title").getText();
     expect(conformationText).to.match(
       /Your order #[1-9]{1,3} is successfully completed!/
-    );   
+    );
   });
 });
-
-

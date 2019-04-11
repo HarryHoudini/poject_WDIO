@@ -1,5 +1,4 @@
-import * as faker from "faker";
-import { CustomerDetails } from "../PageObjects";
+import { CustomerDetails } from "./Fragments/customerDetails";
 import { BasePO } from "./base";
 
 export class CheckoutPO extends BasePO {
@@ -8,7 +7,7 @@ export class CheckoutPO extends BasePO {
   constructor() {
     super();
     this.customerDetails = new CustomerDetails(
-      "#box-checkout-costomer .billing-adress"
+      "#box-checkout-customer .billing-address"
     );
   }
   goCheckOut(): any {
@@ -37,3 +36,4 @@ export class CheckoutPO extends BasePO {
     confirmBtn.click()
   }
 }
+export const Checkout = new CheckoutPO()
