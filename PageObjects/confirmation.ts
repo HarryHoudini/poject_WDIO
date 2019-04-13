@@ -1,15 +1,21 @@
 import { expect } from "chai";
 export class ConfirmationPO {
-  orderSuccessCreate() {
-    $("#box-order-success>.title").waitForDisplayed(
-      7000,
-      false,
-      "Order is completed"
-    );
-    const conformationText = $("#box-order-success>.title").getText();
-    expect(conformationText).to.match(
-      /Your order #[1-9]{1,3} is successfully completed!/
-    );
+  private titleText: string = '#box-order-success .title'
+    isLoaded() {
+    try {
+      $(this.titleText).waitForDisplayed(
+        7000,
+        false,
+        "Order is NOT completed"
+      );
+    } catch (err) {
+      return false;
+    }
   }
+  get conformationTitle(): string {
+   $(this.titleText).waitForDisplayed()
+   return $(this.titleText).getText();     
+  }
+  
 }
-export const Confirmation = new ConfirmationPO () 
+export const Confirmation = new ConfirmationPO();
