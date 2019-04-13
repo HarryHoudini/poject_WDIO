@@ -1,6 +1,6 @@
 # Project with WDIO freamwork and PageFragment pattern
 
- Free shopping platform test with WDIO 
+ Free shopping platform test with WDIO 1
 
 Test Platform URL http://demo.litecart.net/
 
