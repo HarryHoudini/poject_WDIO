@@ -17,14 +17,20 @@ export class CustomerDetails {
     return this.container.$('input[name="phone"]');
   });
   protected postCode: Input = new Input(() => {
-    return this.container.$('input[name="email"]');
+    return this.container.$('input[name="postcode"]');
   });
   protected adress1: Input = new Input(() => {
-    return this.container.$('input[name="adress1"]');
+    return this.container.$('input[name="address1"]');
   });
   protected adress2: Input = new Input(() => {
-    return this.container.$('input[name="adress2"]');
+    return this.container.$('input[name="address2"]');
   });
+  protected city: Input = new Input(() => {
+    return this.container.$('input[name="city"]');
+  });    
+  protected email: Input = new Input(() => {
+    return this.container.$('input[name="email"]');
+  });    
   protected taxID: Input = new Input(() => {
     return this.container.$('input[name="tax_id"]');
   });
@@ -37,19 +43,20 @@ export class CustomerDetails {
   protected zone: Dropdown = new Dropdown(() => {
     return this.container.$('select[name="zone_code"]');
   });
-
   constructor(containerLocator: string) {
     this.containerLocator = containerLocator;
   }
   
   enterCoustumerDetails(CustomerDetails: ICustumerDetails) {
-    $(".loader-wrapper").waitForDisplayed(undefined, true); // wait for NOT displayed
+    $(this.containerLocator).waitForDisplayed(undefined, false);  // wait for NOT displayed
     this.firstName.type(CustomerDetails.first);
     this.lastName.type(CustomerDetails.lastName);
     this.phone.type(CustomerDetails.phone);
+    this.email.type(CustomerDetails.email);
     this.postCode.type(CustomerDetails.postCode);
     this.adress1.type(CustomerDetails.adress1);
     this.adress2.type(CustomerDetails.adress2);
+    this.city.type(CustomerDetails.city)
 
     //Below optional fields
     if (CustomerDetails.taxID) {

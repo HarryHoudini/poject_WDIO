@@ -1,34 +1,36 @@
 import { BasePO } from "./base";
 
 export class ProductDetailsPO extends BasePO {
-  addToCardOneItem(): any {
-    let quantityItmBeforeAddToCard = Number($("span.quantity").getText());
-    let quantitySumBeforeAddToCard = Number(
-      $("span.formatted_value")
-        .getText()
-        .slice(1)
-    );
+   addToCardOneItem(): any {  
+    let sum = $("span.formatted_value");
+    let qnt = $("span.quantity");
+    let productPrice = function() {
+      return Number(
+        $("#box-product span.price")
+          .getText()
+          .slice(1)
+      );
+    }();
+    let productItm = function() {
+      return Number($("#box-product .form-control").getAttribute("value"));
+    }();
     $("button.btn-success").click();
-
-    let quantityItmAftAddToCard = Number($("span.quantity").getText());
-    let quantitySumAftAddToCard = Number(
-      $("span.formatted_value")
-        .getText()
-        .slice(1)
-    );
+    function quantityItmAft() {
+      return Number(qnt.getText());
+    }
+    function quantitySumAft() {
+      return Number(sum.getText().slice(1));
+    }
     browser.waitUntil(
       function() {
-        return quantityItmBeforeAddToCard + 1 === quantityItmAftAddToCard;
+        return productItm === quantityItmAft();
       },
       5000,
       "Wrong quantity is not exchanged"
     );
     browser.waitUntil(
       function() {
-        return (
-          quantitySumAftAddToCard ===
-          quantitySumBeforeAddToCard + quantitySumAftAddToCard
-        );
+        return quantitySumAft() === productPrice;
       },
       5000,
       "Wrong sum is not exchanged"

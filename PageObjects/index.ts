@@ -1,6 +1,6 @@
 export { ProductDetails } from './productDetails'
 export { CheckoutPO, Checkout } from './checkout'
-export { Confirmation } from './confirmation'
+export { ConfirmationPO, Confirmation } from './confirmation'
 export {Input} from './Fragments/input'
 export {Dropdown} from './Fragments/dropdown'
 export {BaseFragment} from './Fragments/baseFragment'
