@@ -23,7 +23,7 @@ Just type: `npm install`
 2. **Run using Selenoid**.
 Coming soon add selenoid configuration
 
-3. **For run debag mode in VSCode**.
+3. **For run debug mode in VSCode**.
 Just type  `F5` key in keyboard
 
 
