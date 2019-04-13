@@ -8,12 +8,12 @@
     "test": "./node_modules/.bin/wdio wdio.conf.js",
     "lint": "tslint --fix 'test/**/*.ts' && tslint --fix 'src/**/*.ts'",
     "_posttest": "marge ./mochaawesome/wdiomochawesome.json --reportTitle 'Awesome test results' && allure generate ./allure-results",
-    "__posttest": "allure generate ./allure-results && allure open",
     "allure": "allure open",
     "clean": "./node_modules/.bin/rimraf allure-report allure-results",
     "report": "./node_modules/.bin/rimraf allure-report && allure generate ./allure-results && allure open",
     "wb": "webdriver-manager start",
-    "repl-wdio": "./node_modules/.bin/wdio repl chrome" 
+    "wb:stop": "webdriver-manager shoutdown",
+    "repl:wdio": "./node_modules/.bin/wdio repl chrome" 
   },
   "author": "Jon Jonsen",
   "license": "ISC",
