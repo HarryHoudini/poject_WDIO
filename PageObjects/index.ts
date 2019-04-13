@@ -1,7 +1,3 @@
-export { ProductDetails } from './productDetails'
+export { ProductDetailsPO, ProductDetails } from './productDetails'
 export { CheckoutPO, Checkout } from './checkout'
 export { ConfirmationPO, Confirmation } from './confirmation'
-export {Input} from './Fragments/input'
-export {Dropdown} from './Fragments/dropdown'
-export {BaseFragment} from './Fragments/baseFragment'
-export {CustomerDetails} from './Fragments/customerDetails'
