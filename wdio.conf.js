@@ -23,9 +23,9 @@ exports.config = {
   //
   sync: true,
   // specs: [
-  //     './test/no_po.ts'
+  //     './test/guest-no-PO.ts'
   // ],
-  specs: ["./test/po.ts"],
+  specs: ["./test/guest-PO.ts"],
   // Patterns to exclude.
   exclude: [
     // 'path/to/excluded/files'

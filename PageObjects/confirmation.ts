@@ -1,4 +1,3 @@
-import { expect } from "chai";
 export class ConfirmationPO {
   private titleText: string = '#box-order-success .title'
     isLoaded() {

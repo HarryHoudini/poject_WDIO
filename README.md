@@ -8,9 +8,8 @@ Test Platform URL http://demo.litecart.net/
 
 - [wdio v5](https://github.com/webdriverio/webdriverio)
 - [Selenoid](https://github.com/aerokube/selenoid)
-- [Selenoid](https://github.com/aerokube/selenoid)
 - [Simply Selenium server](https://github.com/angular/webdriver-manager)
-- [Simply Selenium server](https://github.com/angular/webdriver-manager)
+
 
 ## How to install
 
